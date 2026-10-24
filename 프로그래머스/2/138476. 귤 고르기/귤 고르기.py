@@ -1,14 +1,14 @@
 from collections import Counter
 
 def solution(k, tangerine):
-    counters = Counter(tangerine)
-    answer = 1
-    count_t = 0
-    sorted_con = sorted(counters.values(), reverse = True)
+    answer = 0
+    sum_tan = 0
     
-    for i in sorted_con :
-        count_t += i
-        if count_t >= k:
+    coll_tan = Counter(tangerine)
+    sorted_tan = sorted(coll_tan.values(), reverse = True)
+    
+    for i in sorted_tan:
+        answer += 1
+        sum_tan += i
+        if k <= sum_tan:
             return answer
-        else : 
-            answer += 1
